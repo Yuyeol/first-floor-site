@@ -16,11 +16,7 @@ const List = styled.ul`
   display: flex;
   justify-content: space-between;
 `;
-const Item = styled.li`
-  &:last-child {
-    color: red;
-  }
-`;
+const Item = styled.li``;
 const SLink = styled(Link)`
   display: flex;
   justify-content: center;
@@ -58,9 +54,6 @@ export default ({ fixNav }) => {
         </Item>
         <Item>
           <SLink to="/etc">ETC</SLink>
-        </Item>
-        <Item>
-          <SLink to="/sale">SALE</SLink>
         </Item>
       </List>
     </NavBar>

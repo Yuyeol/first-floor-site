@@ -1,17 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Home from "Routers/Home";
-import About from "Routers/About";
-import LookBook from "Routers/LookBook";
-import Outer from "Routers/Outer";
-import Coat from "Routers/Coat";
-import Shirts from "Routers/Shirts";
-import Top from "Routers/Top";
-import Bottom from "Routers/Bottom";
-import ETC from "Routers/ETC";
-import Sale from "Routers/Sale";
-import Header from "Routers/Header";
-import Footer from "Routers/Footer";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import Home from "Screens/Home";
+import About from "Screens/About";
+import LookBook from "Screens/LookBook";
+import Outer from "Screens/Outer";
+import Coat from "Screens/Coat";
+import Shirts from "Screens/Shirts";
+import Top from "Screens/Top";
+import Bottom from "Screens/Bottom";
+import ETC from "Screens/ETC";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
@@ -27,7 +26,6 @@ export default () => (
       <Route path="/top" exact component={Top} />
       <Route path="/bottom" exact component={Bottom} />
       <Route path="/etc" exact component={ETC} />
-      <Route path="/sale" exact component={Sale} />
       <Footer />
     </>
   </Router>

@@ -109,9 +109,6 @@ export default () => (
       <ItemBold>
         <SLink to="/">Q & A</SLink>
       </ItemBold>
-      <ItemBold>
-        <SLink to="/">REVIEW</SLink>
-      </ItemBold>
     </List>
     <SearchBox>
       <Form>
