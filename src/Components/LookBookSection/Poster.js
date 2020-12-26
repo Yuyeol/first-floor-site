@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -12,7 +11,7 @@ const Container = styled.div`
   }
 `;
 
-const SLink = styled(Link)``;
+const A = styled.a``;
 
 const ImgUrl = styled.img`
   width: 300px;
@@ -24,14 +23,14 @@ const Writer = styled.div``;
 
 const Date = styled.div``;
 
-const Product = ({ imgUrl, title, writer, date }) => (
+const Product = ({ imgUrl, title, writer, date, id }) => (
   <Container>
-    <SLink to="/">
+    <A href={id}>
       <ImgUrl src={imgUrl} />
       <Title>{title}</Title>
       <Writer>{writer}</Writer>
       <Date>{date}</Date>
-    </SLink>
+    </A>
   </Container>
 );
 

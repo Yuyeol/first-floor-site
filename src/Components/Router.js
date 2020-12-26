@@ -11,6 +11,7 @@ import Shirts from "Screens/Shirts";
 import Top from "Screens/Top";
 import Bottom from "Screens/Bottom";
 import ETC from "Screens/ETC";
+import LookBookDetail from "Screens/LookBookDetail";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
@@ -20,6 +21,7 @@ export default () => (
       <Route path="/" exact component={Home} />
       <Route path="/about" exact component={About} />
       <Route path="/lookbook" exact component={LookBook} />
+      <Route path="/lookbook/:id" exact component={LookBookDetail} />
       <Route path="/outer" exact component={Outer} />
       <Route path="/coat" exact component={Coat} />
       <Route path="/shirts" exact component={Shirts} />

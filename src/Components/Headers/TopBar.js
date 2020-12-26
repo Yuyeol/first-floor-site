@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { FaRegEye, FaSearch, FaRegStar } from "react-icons/fa";
+import { FaRegEye, FaSearch, FaRegStar, FaHome } from "react-icons/fa";
 
 const Header = styled.header`
   display: flex;
@@ -12,15 +12,27 @@ const Header = styled.header`
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
 `;
+const ListBox = styled.div`
+  display: flex;
+`;
 const List = styled.ul`
   padding: 15px 0;
   display: flex;
 `;
-const Item = styled.li`
-  display: flex;
+const Home = styled(Link)`
+  background-color: rgb(84, 81, 81);
+  color: white;
+  width: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  display: ${(props) => (props.active ? "flex" : "none")};
+  transition: display 10s ease-in-out;
 `;
-const ItemBold = styled.li`
-  border-left: 1.2px solid lightgrey;
+const Item = styled.li`
+  &:not(:first-child) {
+    border-left: 1.2px solid lightgrey;
+  }
   font-weight: 600;
 `;
 const SLink = styled(Link)`
@@ -86,30 +98,29 @@ const Icon = styled(Link)`
 `;
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default () => (
+export default ({ fixNav }) => (
   <Header>
-    <List>
-      <Item>
-        <SLink to="/">로그인</SLink>
-      </Item>
-      <Item>
-        <SLink to="/">회원가입</SLink>
-      </Item>
-      <Item>
-        <SLink to="/">
-          장바구니<Badge>0</Badge>
-        </SLink>
-      </Item>
-      <ItemBold>
-        <SLink to="/">마이페이지</SLink>
-      </ItemBold>
-      <ItemBold>
-        <SLink to="/">커뮤니티</SLink>
-      </ItemBold>
-      <ItemBold>
-        <SLink to="/">Q & A</SLink>
-      </ItemBold>
-    </List>
+    <ListBox>
+      <Home to="/" active={fixNav === true}>
+        <FaHome />
+      </Home>
+      <List>
+        <Item>
+          <SLink to="/">마이페이지</SLink>
+        </Item>
+        <Item>
+          <SLink to="/">
+            장바구니<Badge>0</Badge>
+          </SLink>
+        </Item>
+        <Item>
+          <SLink to="/">커뮤니티</SLink>
+        </Item>
+        <Item>
+          <SLink to="/">Q & A</SLink>
+        </Item>
+      </List>
+    </ListBox>
     <SearchBox>
       <Form>
         <Input />

@@ -1,5 +1,5 @@
 import CurrLocation from "Components/CurrLocation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div``;
@@ -16,6 +16,9 @@ const AboutImg = styled.img``;
 const About = () => {
   // eslint-disable-next-line no-unused-vars
   const [location, setLocation] = useState("COMPANY");
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Container>
       <LocationBox>

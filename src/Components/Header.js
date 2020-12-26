@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import LogoBlock from "./Headers/LogoBlock";
 import NavBar from "./Headers/NavBar";
 import TopBar from "./Headers/TopBar";
+
+const Container = styled.div``;
 
 export const Header = () => {
   const [fixNav, setFixNav] = useState([]);
@@ -22,10 +25,10 @@ export const Header = () => {
     window.addEventListener("scroll", handleScroll);
   }, []);
   return (
-    <>
-      <TopBar />
+    <Container>
+      <TopBar fixNav={fixNav} />
       <LogoBlock />
       <NavBar fixNav={fixNav} />
-    </>
+    </Container>
   );
 };

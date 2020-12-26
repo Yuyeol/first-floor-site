@@ -1,7 +1,7 @@
 import CurrLocation from "Components/CurrLocation";
 import Product from "Components/ProductSection/Product";
 import Section from "Components/ProductSection/Section";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ETC = () => {
   // eslint-disable-next-line no-unused-vars
@@ -9,7 +9,8 @@ const ETC = () => {
   // eslint-disable-next-line no-unused-vars
   const [products, setProducts] = useState([
     {
-      id: 1,
+      id:
+        "http://firstfloor.co.kr/product/detail.html?product_no=1766&cate_no=115&display_group=1",
       name: "STRIPE SOCKS (4 types, all seasons)",
       brand: "FIRST FLOOR",
       price: "10,400원",
@@ -18,6 +19,9 @@ const ETC = () => {
         "http://firstfloor.co.kr/web/product/medium/201903/21a0d5be61b5927cfad4b14e9e0dc023.jpg",
     },
   ]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <CurrLocation location={location} products={products} />
@@ -31,6 +35,7 @@ const ETC = () => {
               price={product.price}
               salePrice={product.salePrice}
               imgUrl={product.imgUrl}
+              id={product.id}
             />
           ))}
         </Section>

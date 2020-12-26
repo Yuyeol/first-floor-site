@@ -6,7 +6,7 @@ const Container = styled.div`
   font-weight: 600;
 `;
 
-const SLink = styled(Link)``;
+const A = styled.a``;
 
 const ImgUrl = styled.img`
   width: 400px;
@@ -31,14 +31,14 @@ const SalePrice = styled.div`
   color: rgb(236, 105, 70);
 `;
 
-const Product = ({ name, brand, price, salePrice, imgUrl }) => (
+const Product = ({ name, brand, price, salePrice, imgUrl, id }) => (
   <Container>
-    <SLink to="/">
+    <A href={id}>
       <ImgUrl src={imgUrl} />
-    </SLink>
-    <SLink to="/">
+    </A>
+    <A href={id}>
       <Name>{name}</Name>
-    </SLink>
+    </A>
     <Brand>{brand}</Brand>
     <Price>권장소비자가 : {price}</Price>
     <SalePrice>할인판매가 : {salePrice}</SalePrice>
